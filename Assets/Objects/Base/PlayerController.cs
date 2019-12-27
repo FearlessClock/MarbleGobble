@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
             // Get the distance that the finger has moved
             Vector2 touchPoint = InputManager.GetInput(0);
             float distanceRatio = ((touchPoint.x - pressStartPosition.x) * screenTravelRatio) / Screen.width;
-            Debug.Log(distanceRatio );
 
             calculatedAngle = 360 * distanceRatio + currentAngle;
             this.transform.rotation = Quaternion.Euler(0, 0, calculatedAngle);
