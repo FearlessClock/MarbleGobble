@@ -5,6 +5,7 @@ using UnityEngine;
 public class MarbleSpawner : MonoBehaviour
 {
     [SerializeField] private MarbleController marblePrefab = null;
+    [SerializeField] private SpawnPointsHolder spawnPointsHolder = null;
     [SerializeField] private float timeTillNextSpawn = 1f;
     private float timer = 0;
     [SerializeField] private float spawnRadius = 1;
@@ -23,7 +24,7 @@ public class MarbleSpawner : MonoBehaviour
             timer = timeTillNextSpawn - diffImprover;
             MarbleController marble = Instantiate<MarbleController>(marblePrefab, this.transform);
             marble.Target = Vector2.zero;
-            marble.StartingTarget = Random.insideUnitCircle.normalized * spawnRadius;
+            marble.StartingTarget = spawnPointsHolder.ListOfSpawnPoints[Random.Range(0, spawnPointsHolder.ListOfSpawnPoints.Count)].spawnpoint;
             marble.gameObject.SetActive(true);
         }
     }
