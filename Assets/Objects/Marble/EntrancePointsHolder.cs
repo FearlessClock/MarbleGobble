@@ -37,7 +37,7 @@ public class EntrancePointsHolder : ScriptableObject
             EntrancePoint branch = listOfEntrancePoints[Random.Range(0, listOfEntrancePoints.Count)];
             exitPoint = branch.entrancePoint - branch.exitPoint;
             // Get a random pos between the end and the start
-            exitPoint *= 0.5f;// Random.Range(0.3f, 0.7f);
+            exitPoint *=  Random.Range(0.3f, 0.7f);
             exitPoint += branch.exitPoint;
             Debug.Log(exitPoint);
         }

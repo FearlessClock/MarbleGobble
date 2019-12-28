@@ -8,9 +8,11 @@ public class PlayerMeshGenerator : MonoBehaviour
     [SerializeField] private EntrancePointsHolder entrancePointHolder = null;
     [SerializeField] private float width = 0.5f;
     private Vector3[] vertices;
+    private MeshCollider meshCollider = null;
 
     private void Awake()
     {
+        meshCollider = GetComponent<MeshCollider>();
         entrancePointHolder.OnValueChanged += GenerateMesh;
         entrancePointHolder.ListOfEntrancePoints.Clear();
         //entrancePointHolder.CreateNewEntrancePoint(45, 1.2f);
@@ -39,6 +41,7 @@ public class PlayerMeshGenerator : MonoBehaviour
         }
         Mesh mesh;
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
+        meshCollider.sharedMesh = mesh;
         mesh.name = "Procedural Grid";
 
 		mesh.vertices = vertices;
