@@ -7,7 +7,7 @@ using UnityEngine;
 public struct SpawnPoint
 {
     public int ID;
-    public Vector2 spawnpoint;
+    public Vector2 spawnPoint;
     public Vector2 middlePoint;
     public int angleFromRight;
 }
@@ -25,7 +25,7 @@ public class SpawnPointsHolder : ScriptableObject
         set { listOfSpawnPoints = value; OnValueChanged?.Invoke(); }
     }
 
-    public void CreateNewTrack(float angle, float offset)
+    public void CreateNewTrack(int angle, float offset)
     {
         Vector2 pos = new Vector2(offset, 0);
         pos = Quaternion.Euler(0, 0, angle) * pos;
@@ -34,7 +34,7 @@ public class SpawnPointsHolder : ScriptableObject
             ID = numberOfTracks++,
             angleFromRight = angle,
             middlePoint = pos,
-            spawnpoint = pos * 2
+            spawnPoint = pos * 2
         };
         listOfSpawnPoints.Add(spawnPoint);
         OnValueChanged?.Invoke();

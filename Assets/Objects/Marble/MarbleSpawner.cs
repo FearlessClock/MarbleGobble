@@ -24,7 +24,7 @@ public class MarbleSpawner : MonoBehaviour
             timer = timeTillNextSpawn - diffImprover;
             MarbleController marble = Instantiate<MarbleController>(marblePrefab, this.transform);
             marble.Target = Vector2.zero;
-            marble.StartingTarget = spawnPointsHolder.ListOfSpawnPoints[Random.Range(0, spawnPointsHolder.ListOfSpawnPoints.Count)].spawnpoint;
+            marble.StartingTarget = spawnPointsHolder.ListOfSpawnPoints[Random.Range(0, spawnPointsHolder.ListOfSpawnPoints.Count)].spawnPoint;
             marble.gameObject.SetActive(true);
         }
     }
