@@ -8,15 +8,24 @@ public class PlayerMeshGenerator : MonoBehaviour
     [SerializeField] private EntrancePointsHolder entrancePointHolder = null;
     [SerializeField] private float width = 0.5f;
     private Vector3[] vertices;
+
     private void Awake()
     {
         entrancePointHolder.OnValueChanged += GenerateMesh;
         entrancePointHolder.ListOfEntrancePoints.Clear();
-        entrancePointHolder.CreateNewEntrancePoint(45, 1.2f);
-        entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
-        entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
-        entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
+        //entrancePointHolder.CreateNewEntrancePoint(45, 1.2f);
+        //entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
+        //entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
+        //entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
     }
+
+    private void Start()
+    {
+        entrancePointHolder.CreateNewEntrancePoint(50, 1.29f);
+        entrancePointHolder.CreateNewEntrancePoint(100, 1.29f);
+        entrancePointHolder.CreateNewEntrancePoint(150, 1.29f);
+    }
+
     public void GenerateMesh()
     {
         vertices = new Vector3[entrancePointHolder.ListOfEntrancePoints.Count * 4];

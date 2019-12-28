@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listOfEntrancePoints:
   - ID: 0
-    entrancePoint: {x: 1, y: 0}
+    entrancePoint: {x: 0.829196, y: 0.98819727}
     exitPoint: {x: 0, y: 0}
-    angleFromRight: 0
+    angleFromRight: 50
+  - ID: 1
+    entrancePoint: {x: 0.44120592, y: 1.2122035}
+    exitPoint: {x: 0.414598, y: 0.49409863}
+    angleFromRight: 100
+  - ID: 2
+    entrancePoint: {x: 0.00000007689, y: 1.29}
+    exitPoint: {x: 0.42790195, y: 0.8531511}
+    angleFromRight: 90

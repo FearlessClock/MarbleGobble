@@ -12,11 +12,21 @@ public class MarbleTrackSpawner : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < numberOfStartingTracks; i++)
-        {
-            spawnPointsHolder.CreateNewTrack(Random.Range(0, 360), spawnOffset);
-            numberOfSpawnedTracks++;
-        }
+        //for (int i = 0; i < numberOfStartingTracks; i++)
+        //{
+        //    spawnPointsHolder.CreateNewTrack(Random.Range(0, 360), spawnOffset);
+        //    numberOfSpawnedTracks++;
+        //}
+        spawnPointsHolder.CreateNewTrack(50, spawnOffset);
+        numberOfSpawnedTracks++;
+        spawnPointsHolder.CreateNewTrack(100, spawnOffset);
+        numberOfSpawnedTracks++;
+        spawnPointsHolder.CreateNewTrack(150, spawnOffset);
+        numberOfSpawnedTracks++;
+        spawnPointsHolder.CreateNewTrack(200, spawnOffset);
+        numberOfSpawnedTracks++;
+        spawnPointsHolder.CreateNewTrack(250, spawnOffset);
+        numberOfSpawnedTracks++;
     }
     private void OnDestroy()
     {

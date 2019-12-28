@@ -439,6 +439,8 @@ MonoBehaviour:
   marblePrefab: {fileID: 4638019549113922547, guid: f66ceb1c27680934db724a09d1be5882,
     type: 3}
   spawnPointsHolder: {fileID: 11400000, guid: 12bb417e3ed4c9a48bb2cd775fa4f4e9, type: 2}
+  entrancePointsHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
+    type: 2}
   timeTillNextSpawn: 4
   spawnRadius: 2.33
 --- !u!4 &1557470450
