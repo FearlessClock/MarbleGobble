@@ -25,8 +25,8 @@ public class PlayerEntranceColliderSpawner : MonoBehaviour
         foreach (EntrancePoint entrancePoint in entrancePointsHolder.ListOfEntrancePoints)
         {
             GameObject point = Instantiate<GameObject>(entranceColliderPrefab, parent);
-            point.transform.position = entrancePoint.entrancePoint - (entrancePoint.entrancePoint -entrancePoint.exitPoint).normalized * offset;
-            point.transform.rotation = Quaternion.Euler(0, 0, entrancePoint.angleFromRight);
+            point.transform.position = point.transform.TransformPoint(entrancePoint.entrancePoint - (entrancePoint.entrancePoint -entrancePoint.exitPoint).normalized * offset);
+            point.transform.rotation = point.transform.rotation * Quaternion.Euler(0, 0, entrancePoint.angleFromRight);
         }
     }
 }

@@ -14,18 +14,6 @@ public class PlayerMeshGenerator : MonoBehaviour
     {
         meshCollider = GetComponent<MeshCollider>();
         entrancePointHolder.OnValueChanged += GenerateMesh;
-        entrancePointHolder.ListOfEntrancePoints.Clear();
-        //entrancePointHolder.CreateNewEntrancePoint(45, 1.2f);
-        //entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
-        //entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
-        //entrancePointHolder.CreateNewEntrancePoint(Random.Range(0, 360), 1.29f);
-    }
-
-    private void Start()
-    {
-        entrancePointHolder.CreateNewEntrancePoint(50, 1.29f);
-        entrancePointHolder.CreateNewEntrancePoint(100, 1.29f);
-        entrancePointHolder.CreateNewEntrancePoint(150, 1.29f);
     }
 
     public void GenerateMesh()

@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private static float SimplifyAngle(float angle)
+    public static float SimplifyAngle(float angle)
     {
         if(angle > 360)
         {

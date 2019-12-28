@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Track
+    uniqueID: 1611947929
+    locked: 0
+  - name: Marble
+    uniqueID: 4232157135
+    locked: 0
+  - name: Pipe
+    uniqueID: 1272587143
+    locked: 0
