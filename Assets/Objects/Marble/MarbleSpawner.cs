@@ -21,6 +21,10 @@ public class MarbleSpawner : MonoBehaviour
         if(timer < 0)
         {
             diffImprover += 0.1f;
+            if(diffImprover > timeTillNextSpawn + 0.5f)
+            {
+                diffImprover = timeTillNextSpawn - 0.5f;
+            }
             timer = timeTillNextSpawn - diffImprover;
             MarbleController marble = Instantiate<MarbleController>(marblePrefab, this.transform);
             marble.Target = Vector2.zero;
