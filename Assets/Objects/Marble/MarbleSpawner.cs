@@ -35,12 +35,15 @@ public class MarbleSpawner : MonoBehaviour
             }
 
             List<int> spawnPositionsAsIDs = spawnLocationCalculator.GetRandomSpawns();
-            foreach (int pos in spawnPositionsAsIDs)
+            if(spawnPositionsAsIDs != null)
             {
-                MarbleController marble = Instantiate<MarbleController>(marblePrefab, this.transform);
-                marble.Target = Vector2.zero;
-                marble.StartingTarget = spawnPointsHolder.ListOfSpawnPoints[pos].spawnPoint;
-                marble.gameObject.SetActive(true);
+                foreach (int pos in spawnPositionsAsIDs)
+                {
+                    MarbleController marble = Instantiate<MarbleController>(marblePrefab, this.transform);
+                    marble.Target = Vector2.zero;
+                    marble.StartingTarget = spawnPointsHolder.ListOfSpawnPoints[pos].spawnPoint;
+                    marble.gameObject.SetActive(true);
+                }
             }
 
             timer = timeTillNextSpawn - diffImprover;

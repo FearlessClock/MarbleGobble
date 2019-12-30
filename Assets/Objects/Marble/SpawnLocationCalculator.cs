@@ -122,15 +122,19 @@ public class SpawnLocationCalculator
 
     public List<int> GetRandomSpawns()
     {
-        int i = Random.Range(0, spawnLocationsByNbrOfBalls.Count);
-        while(spawnLocationsByNbrOfBalls[i].Count == 0)
+        if (spawnLocationsByNbrOfBalls.Count > 0)
         {
-            i = Random.Range(0, spawnLocationsByNbrOfBalls.Count);
-        }
-            
-        int j = Random.Range(0, spawnLocationsByNbrOfBalls[i].Count);
+            int i = Random.Range(0, spawnLocationsByNbrOfBalls.Count);
+            while (spawnLocationsByNbrOfBalls[i].Count == 0)
+            {
+                i = Random.Range(0, spawnLocationsByNbrOfBalls.Count);
+            }
 
-        return spawnLocationsByNbrOfBalls[i][j];
+            int j = Random.Range(0, spawnLocationsByNbrOfBalls[i].Count);
+
+            return spawnLocationsByNbrOfBalls[i][j];
+        }
+        return null;
     }
 
     public void PrintBuckets()

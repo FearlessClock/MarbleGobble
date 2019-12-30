@@ -19,7 +19,7 @@ public class MarbleTrackSpawner : MonoBehaviour
         quadrants = new bool[(int)(360/ angleBetweenTrack)];
         for (int i = 0; i < numberOfStartingTracks; i++)
         {
-            int angle = Random.Range(0, 360);
+            int angle = 0; // Random.Range(0, 360);
             int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
             if(numberOfSpawnedTracks < quadrants.Length)
             {
@@ -32,6 +32,9 @@ public class MarbleTrackSpawner : MonoBehaviour
                 quadrants[quadrentIndex] = true;
             }
         }
+        Invoke("AddNewTrack", 6);
+        Invoke("AddNewTrack", 11);
+        Invoke("AddNewTrack", 16);
     }
 
     private void CreateNewTrack(int angle)
@@ -45,10 +48,48 @@ public class MarbleTrackSpawner : MonoBehaviour
         int len = entrancePointsHolder.ListOfEntrancePoints.Count;
         if(len == 1)
         {
-            CreateNewTrack(Random.Range(0, 360));
+            if (numberOfSpawnedTracks < quadrants.Length)
+            {
+                CreateNewTrack(Random.Range(0, 360));
+            }
         }
         else if(len > 1)
         {
+            //Chance to make a paired entrance
+            if (true)
+            {
+                // Choose a random track
+                SpawnPoint point = spawnPointsHolder.ListOfSpawnPoints[Random.Range(0, spawnPointsHolder.ListOfSpawnPoints.Count)];
+
+                if (numberOfSpawnedTracks < quadrants.Length)
+                {
+                    int angle = entrancePointsHolder.ListOfEntrancePoints[Random.Range(0, entrancePointsHolder.ListOfEntrancePoints.Count)].angleFromRight + point.angleFromRight;
+                    angle = (int)PlayerController.SimplifyAngle(angle);
+                    int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
+                    if(!quadrants[quadrentIndex])
+                    {
+                        CreateNewTrack(angle);// quadrentIndex * angleBetweenTrack);
+                        quadrants[quadrentIndex] = true;
+                    }
+                    string info = "";
+                    foreach (SpawnPoint item in spawnPointsHolder.ListOfSpawnPoints)
+                    {
+                        info += item.ID + " - " + item.angleFromRight + " : ";
+                    }
+                    foreach (EntrancePoint item in entrancePointsHolder.ListOfEntrancePoints)
+                    {
+                        info += item.ID + " - " + item.angleFromRight + " : ";
+                    }
+                    Debug.Log(info);
+                }
+            }
+            else
+            {
+                CreateNewTrack(Random.Range(0, 360));
+            }
+            // Choose a random Branch
+
+            EntrancePoint entrancePoint = entrancePointsHolder.ListOfEntrancePoints[Random.Range(0, entrancePointsHolder.ListOfEntrancePoints.Count)];
 
         }
     }
