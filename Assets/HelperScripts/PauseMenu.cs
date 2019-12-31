@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
             Resume();
             OnPauseMenuDeactivate?.Invoke();
         }
-        else if (stateVariable == GameStateVariable.GameState.Playing)
+        else if (stateVariable == GameStateVariable.GameState.Running)
         {
             Pause();
             OnPauseMenuActivate?.Invoke();
@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        stateVariable.SetValue(GameStateVariable.GameState.Playing);
+        stateVariable.SetValue(GameStateVariable.GameState.Running);
     }
 
     private void Pause()

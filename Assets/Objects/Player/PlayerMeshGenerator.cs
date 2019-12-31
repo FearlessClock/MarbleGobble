@@ -16,6 +16,11 @@ public class PlayerMeshGenerator : MonoBehaviour
         entrancePointHolder.OnValueChanged += GenerateMesh;
     }
 
+    private void OnDestroy()
+    {
+        entrancePointHolder.OnValueChanged -= GenerateMesh;
+    }
+
     public void GenerateMesh()
     {
         vertices = new Vector3[entrancePointHolder.ListOfEntrancePoints.Count * 4];
@@ -27,8 +32,8 @@ public class PlayerMeshGenerator : MonoBehaviour
             vertices[2 + i * 4] = curPoint.entrancePoint + (Vector2)(Quaternion.Euler(0, 0, curPoint.angleFromRight) * Vector2.down).normalized * width;
             vertices[3 + i * 4] = curPoint.entrancePoint + (Vector2)(Quaternion.Euler(0, 0, curPoint.angleFromRight) * Vector2.up).normalized * width;
         }
-        Mesh mesh;
-        GetComponent<MeshFilter>().mesh = mesh = new Mesh();
+        Mesh mesh = new Mesh();
+        GetComponent<MeshFilter>().mesh = mesh; 
         meshCollider.sharedMesh = mesh;
         mesh.name = "Procedural Grid";
 

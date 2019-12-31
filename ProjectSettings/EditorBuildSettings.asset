@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Objects/FadeScene/Fade.unity
+    guid: 7c7dcd7cfb3b7d144a4dd14de6fec856
+  - enabled: 1
+    path: Assets/Objects/PauseMenu/PauseMenu.unity
+    guid: 21f9cb26d639b484e9a1534d467338eb
+  - enabled: 1
+    path: Assets/Objects/Main Menu/MainMenu.unity
+    guid: b30b998f9cc18da48b6f72dd3f355c1d
+  - enabled: 1
+    path: Assets/Objects/Base/Base.unity
+    guid: 62b7524f6dbe35a4bb05452643cd5f03
   m_configObjects: {}
