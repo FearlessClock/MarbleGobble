@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MarbleSpawner : MonoBehaviour
 {
+    [SerializeField] private float diffStep = 0.1f;
+    [SerializeField] private float diffLimit = 1f;
     [SerializeField] private MarbleController marblePrefab = null;
     [SerializeField] private SpawnPointsHolder spawnPointsHolder = null;
     [SerializeField] private EntrancePointsHolder entrancePointsHolder = null;
@@ -28,10 +30,10 @@ public class MarbleSpawner : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer < 0)
         {
-            diffImprover += 0.1f;
-            if(diffImprover > timeTillNextSpawn + 0.5f)
+            diffImprover += diffStep;
+            if(diffImprover > timeTillNextSpawn + diffLimit)
             {
-                diffImprover = timeTillNextSpawn - 0.5f;
+                diffImprover = timeTillNextSpawn - diffLimit;
             }
 
             List<int> spawnPositionsAsIDs = spawnLocationCalculator.GetRandomSpawns();

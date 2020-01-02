@@ -372,6 +372,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &475030904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475030906}
+  - component: {fileID: 475030905}
+  m_Layer: 0
+  m_Name: Game Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &475030905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475030904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f598f32d1fa3245be0e9fe7149ac79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPointsHolder: {fileID: 11400000, guid: 12bb417e3ed4c9a48bb2cd775fa4f4e9, type: 2}
+  entrancePointsHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
+    type: 2}
+  marbleTrackSpawner: {fileID: 1557470452}
+  playerGenerator: {fileID: 1119671600}
+  trackToPipeRatio: 2
+  score: {fileID: 11400000, guid: e6a25672696f3ba4a83532245a0f630c, type: 2}
+  scoreStep: 1
+--- !u!4 &475030906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475030904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -747.54645, y: 727.87134, z: -349.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509605988
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +924,67 @@ MonoBehaviour:
   entrancePointHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
     type: 2}
   offset: 1.29
+  angleBetweenPipes: 10
+--- !u!1 &1423915298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423915300}
+  - component: {fileID: 1423915299}
+  - component: {fileID: 1423915301}
+  m_Layer: 0
+  m_Name: DeathArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &1423915299
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423915298}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.16
+--- !u!4 &1423915300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423915298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1423915301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423915298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74985a09fe86cd4292fcfe8cad4b56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1511520430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +1115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104d303292bebed4e9ff6f87b7f41341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diffStep: 0.02
+  diffLimit: 1
   marblePrefab: {fileID: 4638019549113922547, guid: f66ceb1c27680934db724a09d1be5882,
     type: 3}
   spawnPointsHolder: {fileID: 11400000, guid: 12bb417e3ed4c9a48bb2cd775fa4f4e9, type: 2}
@@ -1056,8 +1170,9 @@ MonoBehaviour:
   entrancePointsHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
     type: 2}
   angleBetweenTrack: 10
-  numberOfStartingTracks: 1
+  numberOfStartingTracks: 3
   spawnOffset: 1.29
+  chanceToSpawnAPair: 0
 --- !u!1 &1660598274
 GameObject:
   m_ObjectHideFlags: 0
