@@ -20,14 +20,18 @@ public class PlayerGenerator : MonoBehaviour
 
     public void AddRandomBranch()
     {
-        int angle = Random.Range(0, 360);
-        int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenPipes);
-        while (usedAngles.Contains(quadrentIndex))
+        if(360 / angleBetweenPipes > entrancePointHolder.ListOfEntrancePoints.Count )
         {
-            angle = Random.Range(0, 360);
-            quadrentIndex = Mathf.FloorToInt(angle / angleBetweenPipes);
+            int angle = Random.Range(0, 360);
+            int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenPipes);
+            while (usedAngles.Contains(quadrentIndex))
+            {
+                angle = Random.Range(0, 360);
+                quadrentIndex = Mathf.FloorToInt(angle / angleBetweenPipes);
+            }
+            CreateNewBranch(quadrentIndex * angleBetweenPipes);
+
         }
-        CreateNewBranch(quadrentIndex * angleBetweenPipes);
     }
 
     private void CreateNewBranch(int angle)

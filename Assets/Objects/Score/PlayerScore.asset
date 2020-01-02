@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerScore
   m_EditorClassIdentifier: 
   ID: PlayerScore
-  value: 0
+  value: 1
   OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

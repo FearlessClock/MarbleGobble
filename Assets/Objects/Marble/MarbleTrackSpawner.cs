@@ -95,7 +95,7 @@ public class MarbleTrackSpawner : MonoBehaviour
             angle = Random.Range(0, 360);
             quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
         }
-        CreateNewTrack(quadrentIndex * angleBetweenTrack);// quadrentIndex * angleBetweenTrack);
+        CreateNewTrack(quadrentIndex * angleBetweenTrack);
         quadrants[quadrentIndex] = true;
     }
 

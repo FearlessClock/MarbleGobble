@@ -35,10 +35,10 @@ public class GameController : MonoBehaviour
     {
         if(gameState.value == GameStateVariable.GameState.Running)
         {
-            if ((score.value - lastScore) > scoreStep)
+            if ((score.value - lastScore) >= scoreStep)
             {
                 lastScore = score.value;
-                if (spawnPointsHolder.ListOfSpawnPoints.Count % 5 == 0)
+                if (spawnPointsHolder.ListOfSpawnPoints.Count % trackToPipeRatio == 0)
                 {
                     playerGenerator.AddRandomBranch();
                     marbleTrackSpawner.AddNewTrack();
