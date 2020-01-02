@@ -23,8 +23,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private LifeManager lifeManager = null;
     public UnityEvent OnDied;
 
+    [SerializeField] private BoolVariable hasRevived = null;
+
     private void Awake()
     {
+        hasRevived.SetValue(false);
         gameState.SetValue(GameStateVariable.GameState.Running);
     }
 
@@ -56,6 +59,13 @@ public class GameController : MonoBehaviour
             OnDied?.Invoke();
             gameState.SetValue(GameStateVariable.GameState.GameOver);
         }
+        lifeManager.UpdateLives(numberOfLives);
+    }
+
+    public void Revive()
+    {
+        numberOfLives = 3;
+        gameState.SetValue(GameStateVariable.GameState.Running);
         lifeManager.UpdateLives(numberOfLives);
     }
 }

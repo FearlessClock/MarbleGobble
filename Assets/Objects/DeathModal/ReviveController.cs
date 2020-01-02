@@ -9,6 +9,8 @@ public class ReviveController : MonoBehaviour
 {
     [SerializeField] private EventObjectScriptable OnRevive = null;
     [SerializeField] private BoolVariable hasRevived = null;
+    [SerializeField] private GameStateVariable gameState = null;
+    [SerializeField] private GameStateVariable.GameState continueState = GameStateVariable.GameState.Running;
 
     public UnityEvent OnRewardedAdCompleted;
     public UnityEvent OnRewardedAdSkip;
@@ -40,6 +42,7 @@ public class ReviveController : MonoBehaviour
 
     private void Advertising_RewardedAdCompleted(RewardedAdNetwork arg1, AdPlacement arg2)
     {
+        gameState.SetValue(continueState);
         OnRewardedAdCompleted?.Invoke();
         OnRevive.Call(null);
     }

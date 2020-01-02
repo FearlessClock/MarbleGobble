@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 475030906}
   - component: {fileID: 475030905}
   - component: {fileID: 475030907}
+  - component: {fileID: 475030908}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -501,6 +502,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hasRevived: {fileID: 11400000, guid: 1a93a07c4bc75bc44ab0501997edb9b8, type: 2}
 --- !u!4 &475030906
 Transform:
   m_ObjectHideFlags: 0
@@ -527,6 +529,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f644059896f42ea4f822411a78b32465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &475030908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475030904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a2d699d7993ac45945ea436b7edc26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventScriptable: {fileID: 11400000, guid: 23fa412a5c51ecb419752907356dc225, type: 2}
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 475030905}
+        m_MethodName: Revive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &509605988
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da2bb973d3283a342a134d21664854e9, type: 2}
   m_sharedMaterial: {fileID: -3614216822960664243, guid: da2bb973d3283a342a134d21664854e9,
@@ -1389,7 +1418,7 @@ MonoBehaviour:
   entrancePointsHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
     type: 2}
   timeTillNextSpawn: 4
-  spawnRadius: 2.33
+  spawnRadius: 2.62
 --- !u!4 &1557470450
 Transform:
   m_ObjectHideFlags: 0
