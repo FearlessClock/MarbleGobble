@@ -628,7 +628,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da2bb973d3283a342a134d21664854e9, type: 2}
   m_sharedMaterial: {fileID: -3614216822960664243, guid: da2bb973d3283a342a134d21664854e9,
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   entrancePointsHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
     type: 2}
   timeTillNextSpawn: 4
-  spawnRadius: 2.33
+  offSetMultiplier: 0.95
 --- !u!4 &1557470450
 Transform:
   m_ObjectHideFlags: 0

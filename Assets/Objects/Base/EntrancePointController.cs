@@ -13,9 +13,13 @@ public class EntrancePointController : MonoBehaviour
             Debug.LogError("Score controller doesn't exist, please add it to the scene");
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        scoreController.AddToScore(1);
-        Destroy(collision.gameObject);
+        if (collision.CompareTag("Marble"))
+        {
+            scoreController.AddToScore(1);
+            collision.GetComponent<MarbleController>()?.RunCatchAnimation();
+        }
     }
 }

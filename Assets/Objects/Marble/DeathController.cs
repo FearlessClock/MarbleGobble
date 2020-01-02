@@ -11,7 +11,7 @@ public class DeathController : MonoBehaviour
     {
         if (collision.CompareTag("Marble"))
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<MarbleController>().RunDestroyAnimation();
             OnLoseHealth?.Invoke();
         }
     }

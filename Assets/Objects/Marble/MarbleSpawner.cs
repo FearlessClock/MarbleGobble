@@ -12,7 +12,8 @@ public class MarbleSpawner : MonoBehaviour
     [SerializeField] private EntrancePointsHolder entrancePointsHolder = null;
     [SerializeField] private float timeTillNextSpawn = 1f;
     private float timer = 0;
-    [SerializeField] private float spawnRadius = 1;
+    private float spawnRadius = 1;
+    [SerializeField] private float offSetMultiplier = 0.9f;
     private float diffImprover = 0;
 
     SpawnLocationCalculator spawnLocationCalculator = null;
@@ -24,6 +25,8 @@ public class MarbleSpawner : MonoBehaviour
         spawnPointsHolder.OnValueChanged += UpdateSpawnMatrix;
         entrancePointsHolder.OnValueChanged += UpdateEntranceMatrix;
         marblePrefab.gameObject.SetActive(false);
+
+        spawnRadius = Camera.main.orthographicSize * Camera.main.aspect * offSetMultiplier;
     }
 
     private void Update()
