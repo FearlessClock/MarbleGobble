@@ -924,15 +924,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnRevive: {fileID: 11400000, guid: 23fa412a5c51ecb419752907356dc225, type: 2}
   hasRevived: {fileID: 11400000, guid: 1a93a07c4bc75bc44ab0501997edb9b8, type: 2}
+  gameState: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
+  continueState: 1
   OnRewardedAdCompleted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1433645367}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: UnloadScene
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 11400000, guid: 5d139e3bbccbeb94eb1fdcb361e012aa,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: StringVariable, HelperScripts
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
