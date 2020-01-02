@@ -126,7 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a42f256e9be82546b8eaf44b6edd4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.5
+  gamestate: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
+  movementSpeed: 0.7
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &4638019549113922540
 Rigidbody2D:
   serializedVersion: 4

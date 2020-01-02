@@ -49,7 +49,7 @@ public class MarbleTrackSpawner : MonoBehaviour
         {
             if (numberOfSpawnedTracks < quadrants.Length)
             {
-                CreateNewTrack(Random.Range(0, 360));
+                CreateRandomTrack();
             }
         }
         else if(len > 1)
@@ -80,18 +80,23 @@ public class MarbleTrackSpawner : MonoBehaviour
             {
                 if (numberOfSpawnedTracks < quadrants.Length)
                 {
-                    int angle = Random.Range(0, 360);
-                    int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
-                    while (quadrants[quadrentIndex])
-                    {
-                        angle = Random.Range(0, 360);
-                        quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
-                    }
-                    CreateNewTrack(quadrentIndex * angleBetweenTrack);// quadrentIndex * angleBetweenTrack);
-                    quadrants[quadrentIndex] = true;
+                    CreateRandomTrack();
                 }
             }
         }
+    }
+
+    private void CreateRandomTrack()
+    {
+        int angle = Random.Range(0, 360);
+        int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
+        while (quadrants[quadrentIndex])
+        {
+            angle = Random.Range(0, 360);
+            quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
+        }
+        CreateNewTrack(quadrentIndex * angleBetweenTrack);// quadrentIndex * angleBetweenTrack);
+        quadrants[quadrentIndex] = true;
     }
 
     private void OnDestroy()

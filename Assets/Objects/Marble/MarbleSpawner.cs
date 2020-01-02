@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MarbleSpawner : MonoBehaviour
 {
+    [SerializeField] private GameStateVariable gamestate = null;
     [SerializeField] private float diffStep = 0.1f;
     [SerializeField] private float diffLimit = 1f;
     [SerializeField] private MarbleController marblePrefab = null;
@@ -27,6 +28,10 @@ public class MarbleSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (gamestate.value != GameStateVariable.GameState.Running)
+        {
+            return;
+        }
         timer -= Time.deltaTime;
         if(timer < 0)
         {

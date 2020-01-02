@@ -1887,6 +1887,7 @@ GameObject:
   - component: {fileID: 1778503469}
   - component: {fileID: 1778503471}
   - component: {fileID: 1778503470}
+  - component: {fileID: 1778503472}
   m_Layer: 0
   m_Name: HighScore
   m_TagString: Untagged
@@ -1931,7 +1932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100.122
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da2bb973d3283a342a134d21664854e9, type: 2}
   m_sharedMaterial: {fileID: -3614216822960664243, guid: da2bb973d3283a342a134d21664854e9,
@@ -2001,10 +2002,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1778503470}
-    characterCount: 7
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -2032,6 +2033,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778503468}
   m_CullTransparentMesh: 0
+--- !u!114 &1778503472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778503468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f9358bfac0af14cb53222d6c9a5b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefix: 
+  valueVar: {fileID: 11400000, guid: dc5ebe164cae87847b09993d4fabf5d7, type: 2}
+  suffix: 
 --- !u!1 &1831465204
 GameObject:
   m_ObjectHideFlags: 0

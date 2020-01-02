@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Objects/Base/Base.unity
     guid: 62b7524f6dbe35a4bb05452643cd5f03
+  - enabled: 1
+    path: Assets/Objects/DeathModal/GameOverScreen.unity
+    guid: 5237a5787f653eb47bb20e62120b3688
   m_configObjects: {}

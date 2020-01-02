@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
@@ -17,20 +18,44 @@ public class GameController : MonoBehaviour
     [SerializeField] private int scoreStep = 100;
     private int lastScore = 0;
 
+    [SerializeField] private int numberOfLives = 3;
+    [SerializeField] private GameStateVariable gameState = null;
+    [SerializeField] private LifeManager lifeManager = null;
+    public UnityEvent OnDied;
+
+    private void Awake()
+    {
+        gameState.SetValue(GameStateVariable.GameState.Running);
+    }
+
     private void Update()
     {
-        if((score.value - lastScore) > scoreStep )
+        if(gameState.value == GameStateVariable.GameState.Running)
         {
-            lastScore = score.value;
-            if(spawnPointsHolder.ListOfSpawnPoints.Count % 5 == 0)
+            if ((score.value - lastScore) > scoreStep)
             {
-                playerGenerator.AddRandomBranch();
-                marbleTrackSpawner.AddNewTrack();
-            }
-            else
-            {
-                marbleTrackSpawner.AddNewTrack();
+                lastScore = score.value;
+                if (spawnPointsHolder.ListOfSpawnPoints.Count % 5 == 0)
+                {
+                    playerGenerator.AddRandomBranch();
+                    marbleTrackSpawner.AddNewTrack();
+                }
+                else
+                {
+                    marbleTrackSpawner.AddNewTrack();
+                }
             }
         }
+    }
+
+    public void TakenHit()
+    {
+        numberOfLives -= 1;
+        if(numberOfLives <= 0)
+        {
+            OnDied?.Invoke();
+            gameState.SetValue(GameStateVariable.GameState.GameOver);
+        }
+        lifeManager.UpdateLives(numberOfLives);
     }
 }
