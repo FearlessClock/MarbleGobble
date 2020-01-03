@@ -61,6 +61,7 @@ public class MarbleController : MonoBehaviour
         switch (eventId)
         {
             case "EndSpawnAnimation":
+                this.GetComponentInChildren<TrailRenderer>().emitting = true;
                 isMoving = true;
                 break;
             case "DestroyObject":
@@ -74,17 +75,22 @@ public class MarbleController : MonoBehaviour
     public void RunDestroyAnimation()
     {
         GetComponent<Animator>().SetTrigger("DestroyTrigger");
-        currentMovementSpeed *= 0.3f;
-        this.tag = "Untagged";
-        isDieing = true;
+        currentMovementSpeed *= 0.18f;
+        PrepareDestroy();
     }
 
     public void RunCatchAnimation()
     {
         GetComponent<Animator>().SetTrigger("CatchTrigger");
         currentMovementSpeed *= 0.1f;
+        PrepareDestroy();
+    }
+
+    public void PrepareDestroy()
+    {
         this.tag = "Untagged";
         isDieing = true;
+        this.GetComponentInChildren<TrailRenderer>().emitting = false;
     }
 
     public void Destroy()
