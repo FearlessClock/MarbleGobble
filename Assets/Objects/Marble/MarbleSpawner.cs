@@ -11,6 +11,7 @@ public class MarbleSpawner : MonoBehaviour
     [SerializeField] private SpawnPointsHolder spawnPointsHolder = null;
     [SerializeField] private EntrancePointsHolder entrancePointsHolder = null;
     [SerializeField] private float timeTillNextSpawn = 1f;
+    [SerializeField] private float minTimeTillNextSpawn = 1f;
     private float timer = 0;
     private float spawnRadius = 1;
     [SerializeField] private float offSetMultiplier = 0.9f;
@@ -35,13 +36,21 @@ public class MarbleSpawner : MonoBehaviour
         {
             return;
         }
+
         timer -= Time.deltaTime;
+
         if(timer < 0)
         {
-            diffImprover += diffStep;
-            if(diffImprover > timeTillNextSpawn + diffLimit)
+            if(timeTillNextSpawn - diffImprover > minTimeTillNextSpawn)
             {
-                diffImprover = timeTillNextSpawn - diffLimit;
+                diffImprover += diffStep;
+                if (diffImprover > timeTillNextSpawn + diffLimit)
+                {
+                    diffImprover = timeTillNextSpawn - diffLimit;
+                }
+            } else
+            {
+                diffImprover = timeTillNextSpawn - minTimeTillNextSpawn;
             }
 
             List<int> spawnPositionsAsIDs = spawnLocationCalculator.GetRandomSpawns();

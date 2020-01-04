@@ -16,7 +16,7 @@ public class MarbleController : MonoBehaviour
     [SerializeField] private float maxMovementSpeed = 1;
     [SerializeField] private float timeToMaxSpeed = 1;
     private float currentTimeToMaxSpeed = 0;
-    private bool isMoving = false;
+    private bool isMoving = true;
     private bool isDieing = false;
     private Vector2 direction;
     private Rigidbody2D rb = null;

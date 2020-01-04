@@ -266,9 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamestate: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
-  initMovementSpeed: 0
+  initMovementSpeed: 0.1
   maxMovementSpeed: 1
-  timeToMaxSpeed: 0.55
+  timeToMaxSpeed: 1
   OnSpawn:
     m_PersistentCalls:
       m_Calls: []

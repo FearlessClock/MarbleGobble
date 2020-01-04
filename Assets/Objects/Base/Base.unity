@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamestate: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
-  diffStep: 0.02
+  diffStep: 0.03
   diffLimit: 1
   marblePrefab: {fileID: 4638019549113922547, guid: f66ceb1c27680934db724a09d1be5882,
     type: 3}
@@ -1728,6 +1728,7 @@ MonoBehaviour:
   entrancePointsHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
     type: 2}
   timeTillNextSpawn: 4
+  minTimeTillNextSpawn: 1.4
   offSetMultiplier: 0.95
 --- !u!4 &1557470450
 Transform:
