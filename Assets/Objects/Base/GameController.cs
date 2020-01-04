@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        trackToPipeRatio += Random.Range(-1, 2);
         ResetCountdownTimer();
         hasRevived.SetValue(false);
         gameState.SetValue(GameStateVariable.GameState.Countdown);
@@ -106,6 +108,7 @@ public class GameController : MonoBehaviour
 
     public void TakenHit()
     {
+        // TODO : Only take 1 damage per wave of marbles
         numberOfLives -= 1;
         if(numberOfLives <= 0)
         {
