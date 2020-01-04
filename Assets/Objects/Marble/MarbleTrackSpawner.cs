@@ -6,6 +6,7 @@ public class MarbleTrackSpawner : MonoBehaviour
 {
     [SerializeField] private SpawnPointsHolder spawnPointsHolder = null;
     [SerializeField] private EntrancePointsHolder entrancePointsHolder = null;
+    [SerializeField] private GameStateVariable gameState = null;
 
     [SerializeField] private int angleBetweenTrack = 7;
     private bool[] quadrants;
@@ -19,11 +20,21 @@ public class MarbleTrackSpawner : MonoBehaviour
     private void Start()
     {
         quadrants = new bool[(int)(360/ angleBetweenTrack)];
+        StartCoroutine(CreateStartingTracks());
+    }
+
+    private IEnumerator CreateStartingTracks()
+    {
+        while(gameState.value != GameStateVariable.GameState.Running)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+
         for (int i = 0; i < numberOfStartingTracks; i++)
         {
             int angle = 0; // Random.Range(0, 360);
             int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
-            if(numberOfSpawnedTracks < quadrants.Length)
+            if (numberOfSpawnedTracks < quadrants.Length)
             {
                 while (quadrants[quadrentIndex])
                 {

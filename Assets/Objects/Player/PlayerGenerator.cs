@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerGenerator : MonoBehaviour
 {
+    [SerializeField] private GameStateVariable gameState = null;
     [SerializeField] private EntrancePointsHolder entrancePointHolder = null;
     [SerializeField] private float offset = 1.29f;
     [SerializeField] private int angleBetweenPipes = 7;
@@ -15,6 +16,15 @@ public class PlayerGenerator : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(WaitForGameStart());
+    }
+
+    private IEnumerator WaitForGameStart()
+    {
+        while (gameState.value != GameStateVariable.GameState.Running)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
         CreateNewBranch(0);
     }
 

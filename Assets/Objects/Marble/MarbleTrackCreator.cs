@@ -20,12 +20,9 @@ public class MarbleTrackCreator : MonoBehaviour
     private void GenerateTracks()
     {
         trackPrefab.gameObject.SetActive(false);
-        foreach (Transform child in trackParent)
+        for (int i = trackParent.childCount; i < spawnPointsHolder.ListOfSpawnPoints.Count; i++)
         {
-            Destroy(child.gameObject);
-        }
-        foreach(SpawnPoint point in spawnPointsHolder.ListOfSpawnPoints)
-        {
+            SpawnPoint point = spawnPointsHolder.ListOfSpawnPoints[i];
             TrackController trackController = Instantiate<TrackController>(trackPrefab, trackParent);
             trackController.startingPoint = point.middlePoint;
             trackController.angle = point.angleFromRight;

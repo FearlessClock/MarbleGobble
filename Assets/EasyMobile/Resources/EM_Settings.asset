@@ -214,9 +214,18 @@ MonoBehaviour:
     mGpgsShouldRequestServerAuthCode: 0
     mGpgsForceRefreshServerAuthCode: 0
     mGpgsOauthScopes: []
-    mLeaderboards: []
+    mLeaderboards:
+    - _name: Highscores
+      _iosId: 
+      _androidId: CggIicqJ9XsQAhAB
     mAchievements: []
-    mAndroidXmlResources: 
+    mAndroidXmlResources: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!--\r\nGoogle
+      Play game services IDs.\r\nSave this file as res/values/games-ids.xml in your
+      project.\r\n-->\r\n<resources>\r\n  <!-- app_id -->\r\n  <string name=\"app_id\"
+      translatable=\"false\">33263084809</string>\r\n  <!-- package_name -->\r\n  <string
+      name=\"package_name\" translatable=\"false\">com.Spoonfulofgames.MarbleGobble</string>\r\n
+      \ <!-- leaderboard Highscore -->\r\n  <string name=\"leaderboard_highscore\"
+      translatable=\"false\">CggIicqJ9XsQAhAB</string>\r\n</resources>\r\n"
     mEnableMultiplayer: 0
     mEnableSavedGames: 0
     mAutoConflictResolutionStrategy: 0
@@ -233,10 +242,10 @@ MonoBehaviour:
     - _name: NoAds
       _type: 0
       _id: noads
-      _price: 
-      _description: 
+      _price: 0.99
+      _description: Remove the ads from after losing the game
       _storeSpecificIds: []
-      _isEditingAdvanced: 0
+      _isEditingAdvanced: 1
   mNotificationSettings:
     mAutoInit: 1
     mAutoInitDelay: 0
@@ -334,4 +343,4 @@ MonoBehaviour:
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
   mActiveModuleIndex: 3
-  mIsSelectingModule: 1
+  mIsSelectingModule: 0

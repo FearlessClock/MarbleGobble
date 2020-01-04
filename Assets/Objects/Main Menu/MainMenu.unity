@@ -1605,6 +1605,7 @@ GameObject:
   - component: {fileID: 1758289833}
   - component: {fileID: 1758289832}
   - component: {fileID: 1758289835}
+  - component: {fileID: 1758289836}
   m_Layer: 0
   m_Name: No Ads
   m_TagString: Untagged
@@ -1676,7 +1677,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1758289835}
-        m_MethodName: BuyRemoveAdsCallback
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1731,9 +1732,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 1758289830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b82900fc3eb915a49a9871bf332d0b9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 43c7fb8b797031040b335e875b0a7dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemInformation: {fileID: 11400000, guid: 042c12f2bcdd32941949520fb5717c52, type: 2}
+  itemToBuy: 3
+  itemSpriteRenderer: {fileID: 0}
+  realMoneyPrice: {fileID: 0}
+  amountOfCoins: {fileID: 0}
+  OnPurchaseSuccesful:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bfee56d2b076a894db591779eb82ee4a, type: 2}
+        m_MethodName: SetValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPurchaseFailure:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1758289836}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Update
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &1758289836
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758289830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f0ba3559915e9948b6279b8b99ed9e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1759731035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2101,9 @@ MonoBehaviour:
   prefix: 
   valueVar: {fileID: 11400000, guid: dc5ebe164cae87847b09993d4fabf5d7, type: 2}
   suffix: 
+  OnTextUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1831465204
 GameObject:
   m_ObjectHideFlags: 0

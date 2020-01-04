@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,10 +27,45 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private BoolVariable hasRevived = null;
 
+    [Header("Countdown Variables")]
+    [SerializeField] private float countdownAmount = 3;
+    private float countdownTimer = 0;
+    [SerializeField] private TextMeshProUGUI countdownTimerText = null;
+    [SerializeField] private Animator countdownTimerAnimator = null;
+
     private void Awake()
     {
+        ResetCountdownTimer();
         hasRevived.SetValue(false);
-        gameState.SetValue(GameStateVariable.GameState.Running);
+        gameState.SetValue(GameStateVariable.GameState.Countdown);
+        gameState.OnValueChanged.AddListener(StateUpdate);
+    }
+
+    private void ResetCountdownTimer()
+    {
+        countdownTimer = countdownAmount;
+        countdownTimerText.gameObject.SetActive(true);
+        countdownTimerText.SetText(((int)countdownTimer).ToString());
+    }
+
+    private void StateUpdate()
+    {
+        switch (gameState.value)
+        {
+            case GameStateVariable.GameState.MainMenu:
+                break;
+            case GameStateVariable.GameState.Countdown:
+                ResetCountdownTimer();
+                break;
+            case GameStateVariable.GameState.Running:
+                break;
+            case GameStateVariable.GameState.Pause:
+                break;
+            case GameStateVariable.GameState.GameOver:
+                break;
+            default:
+                break;
+        }
     }
 
     private void Update()
@@ -49,6 +86,22 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+        else if(gameState.value == GameStateVariable.GameState.Countdown)
+        {
+            countdownTimer -= Time.deltaTime;
+            // Only update the text when the amount in ints changes and run an animation
+            if (!((int)countdownTimer + 1).ToString().Equals(countdownTimerText.text))
+            {
+                countdownTimerText.SetText(((int)countdownTimer+1).ToString());
+                countdownTimerAnimator.SetTrigger("Update");
+            }
+            if(countdownTimer <= 0)
+            {
+                gameState.SetValue(GameStateVariable.GameState.Running);
+                countdownTimer = countdownAmount;
+                countdownTimerText.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void TakenHit()
@@ -65,7 +118,7 @@ public class GameController : MonoBehaviour
     public void Revive()
     {
         numberOfLives = 3;
-        gameState.SetValue(GameStateVariable.GameState.Running);
+        gameState.SetValue(GameStateVariable.GameState.Countdown);
         lifeManager.UpdateLives(numberOfLives);
     }
 }
