@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 47763137}
   - component: {fileID: 47763136}
   - component: {fileID: 47763135}
+  - component: {fileID: 47763138}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -201,7 +202,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 47763136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 47763138}
+        m_MethodName: ToggleSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &47763136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,8 +232,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: bfe2c4733fb588b4fa7a82ab336b4d90, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -238,6 +250,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47763133}
   m_CullTransparentMesh: 0
+--- !u!114 &47763138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47763133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee80c2651ebb36e4a85c4c7eeab97ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 03c45e0760a9c9946a7067296d8375a7, type: 2}
+  soundToggleStatePP: {fileID: 11400000, guid: 96dc72951e3c46a4aae360ba4f510c6b, type: 2}
+  soundButtonToggleImage: {fileID: 47763136}
+  soundOnSprite: {fileID: 21300000, guid: bfe2c4733fb588b4fa7a82ab336b4d90, type: 3}
+  soundOffSprite: {fileID: 21300000, guid: c2048bbe661a48d4cbe3a9e5f8b9da3d, type: 3}
+  soundOnSnapshot: {fileID: -4109064764569004452, guid: 03c45e0760a9c9946a7067296d8375a7,
+    type: 2}
+  soundOffSnapshot: {fileID: 24500006, guid: 03c45e0760a9c9946a7067296d8375a7, type: 2}
+  toggleSpeed: 0.5
 --- !u!1 &102240358
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +846,7 @@ GameObject:
   - component: {fileID: 684279995}
   - component: {fileID: 684279994}
   - component: {fileID: 684279993}
+  - component: {fileID: 684279996}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -882,7 +916,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 684279994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 684279996}
+        m_MethodName: LoadSceneWithFadeCallback
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: fed27dd9c0dce13419c0fe5067f750df,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: StringVariable, HelperScripts
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &684279994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,6 +965,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684279991}
   m_CullTransparentMesh: 0
+--- !u!114 &684279996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684279991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13a295583f23184a93dae4456a7a28c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadSceneEffectName: {fileID: 11400000, guid: b4318cefce0465b438085514e558d525,
+    type: 2}
+  newSceneToLoad: {fileID: 11400000, guid: 7cd6c025082e26645ae5929da7bf6542, type: 2}
 --- !u!1 &1063358625
 GameObject:
   m_ObjectHideFlags: 0
