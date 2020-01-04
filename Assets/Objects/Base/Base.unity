@@ -1381,6 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7d57e153fed184288c5a994f04d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamestate: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
   startingAngle: 270
   screenTravelRatio: 0.864
   entrancePoints: []

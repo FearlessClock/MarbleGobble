@@ -31,7 +31,7 @@ public class InputManager: MonoBehaviour
         return (!EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonUp(0)) ||
                 (Input.touchCount > 0 &&
                 (Input.touches[0].phase == TouchPhase.Ended) &&
-                !EventSystem.current.IsPointerOverGameObject(Input.touches[0].fingerId));   // IsPointerOverGameobject only works with touchPhase Begin, workaround in playerController.cs
+                !EventSystem.current.IsPointerOverGameObject(Input.touches[0].fingerId));   // IsPointerOverGameobject only works with touchPhase Begin, workaround is to check if the pointer is over a UI element at down and save the value
     }
 
     public static bool InputExistsDown()
