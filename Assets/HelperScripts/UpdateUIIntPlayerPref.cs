@@ -19,6 +19,7 @@ public class UpdateUIIntPlayerPref : MonoBehaviour
     {
         textToUpdate = GetComponent<TextMeshProUGUI>();
         valueVar.OnValueChanged.AddListener(() => { UpdateText(valueVar.GetLatestValue()); OnTextUpdated?.Invoke(); }) ;
+        UpdateText(valueVar.GetLatestValue());
     }
     
     public void UpdateText(float value)

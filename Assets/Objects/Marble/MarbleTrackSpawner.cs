@@ -27,7 +27,7 @@ public class MarbleTrackSpawner : MonoBehaviour
     {
         while(gameState.value != GameStateVariable.GameState.Running)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         for (int i = 0; i < numberOfStartingTracks; i++)

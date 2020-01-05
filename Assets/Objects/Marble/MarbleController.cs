@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class MarbleController : MonoBehaviour
 {
     [SerializeField] private GameStateVariable gamestate = null;
+    public int waveId = 0;
     private Vector2 target ;
     public Vector2 Target { set { target = value; } }
     private Vector2 startingTarget;

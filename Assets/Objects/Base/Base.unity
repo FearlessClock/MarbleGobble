@@ -1383,7 +1383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamestate: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
   startingAngle: 270
-  screenTravelRatio: 0.864
+  screenTravelRatio: 0.647
   entrancePoints: []
   connectionPoints: []
 --- !u!114 &1119671600
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   angleBetweenTrack: 10
   numberOfStartingTracks: 36
   spawnOffset: {fileID: 11400000, guid: 07cad476f998c86468dcc8a5cda8821f, type: 2}
-  chanceToSpawnAPair: 0.679
+  chanceToSpawnAPair: 0.806
 --- !u!1 &1660598274
 GameObject:
   m_ObjectHideFlags: 0
