@@ -21,4 +21,9 @@ public class LifeCapsuleController : MonoBehaviour
     {
         animator.SetTrigger("Die");
     }
+    public void Revive()
+    {
+        animator.ResetTrigger("Die");
+        animator.SetTrigger("Revive");
+    }
 }

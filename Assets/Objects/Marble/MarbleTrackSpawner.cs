@@ -13,7 +13,7 @@ public class MarbleTrackSpawner : MonoBehaviour
 
     [SerializeField] private int numberOfStartingTracks = 2;
     private int numberOfSpawnedTracks = 0;
-    [SerializeField] private float spawnOffset = 3;
+    [SerializeField] private FloatVariable spawnOffset = null;
     [Range(0f,1f)]
     [SerializeField] private float chanceToSpawnAPair = 0.5f;
 

@@ -122,6 +122,6 @@ public class GameController : MonoBehaviour
     {
         numberOfLives = 3;
         gameState.SetValue(GameStateVariable.GameState.Countdown);
-        lifeManager.UpdateLives(numberOfLives);
+        lifeManager.ResetLives();
     }
 }

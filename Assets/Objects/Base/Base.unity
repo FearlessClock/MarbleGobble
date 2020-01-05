@@ -1350,7 +1350,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1401,7 +1401,7 @@ MonoBehaviour:
   gameState: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
   entrancePointHolder: {fileID: 11400000, guid: 1eaf30431c066234cabcbf19357f1dca,
     type: 2}
-  offset: 1.29
+  offset: {fileID: 11400000, guid: 07cad476f998c86468dcc8a5cda8821f, type: 2}
   angleBetweenPipes: 20
 --- !u!1 &1423915298
 GameObject:
@@ -1436,7 +1436,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.16
+  m_Radius: 1.25
 --- !u!4 &1423915300
 Transform:
   m_ObjectHideFlags: 0
@@ -1477,6 +1477,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  deathCircleRadius: {fileID: 11400000, guid: 07cad476f998c86468dcc8a5cda8821f, type: 2}
+  offsetFromCircleRadius: 0.05
 --- !u!1 &1425910537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,9 +1779,9 @@ MonoBehaviour:
     type: 2}
   gameState: {fileID: 11400000, guid: 84deba9519d6e9a48bfa9dcfbee649b3, type: 2}
   angleBetweenTrack: 10
-  numberOfStartingTracks: 3
-  spawnOffset: 1.29
-  chanceToSpawnAPair: 0.449
+  numberOfStartingTracks: 36
+  spawnOffset: {fileID: 11400000, guid: 07cad476f998c86468dcc8a5cda8821f, type: 2}
+  chanceToSpawnAPair: 0.679
 --- !u!1 &1660598274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,6 +2180,7 @@ GameObject:
   - component: {fileID: 2015469615}
   - component: {fileID: 2015469614}
   - component: {fileID: 2015469613}
+  - component: {fileID: 2015469616}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2220,7 +2223,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.433099
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2250,3 +2253,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2015469616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015469612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b14b8c6c3b0ef740ab733b325f76cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneWidth: 6

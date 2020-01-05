@@ -18,4 +18,12 @@ public class LifeManager : MonoBehaviour
             lives[i].Kill();
         }
     }
+
+    public void ResetLives()
+    {
+        for (int i = 0; i < lives.Length; i++)
+        {
+            lives[i].Revive();
+        }
+    }
 }

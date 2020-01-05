@@ -17,6 +17,13 @@ public class CameraRescaler : MonoBehaviour
     }
     private void Update()
     {
-        currentCamera.orthographicSize = 0.5f * (sceneWidth / Screen.width) * Screen.height;
+        if(currentCamera == null)
+        {
+            currentCamera = GetComponent<Camera>();
+        }
+        else
+        {
+            currentCamera.orthographicSize = 0.5f * (sceneWidth / Screen.width) * Screen.height;
+        }
     }
 }

@@ -158,7 +158,7 @@ public class SpawnLocationCalculator
             output += "\n";
         }
 
-        Debug.Log(output);
+        //Debug.Log(output);
     }
 
     public void PrintMatrices()
