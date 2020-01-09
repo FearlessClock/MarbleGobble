@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
         hasRevived.SetValue(false);
         gameState.SetValue(GameStateVariable.GameState.Countdown);
         gameState.OnValueChanged.AddListener(StateUpdate);
+        lastScore = 0;
     }
 
     private void ResetCountdownTimer()
@@ -77,10 +78,9 @@ public class GameController : MonoBehaviour
             if ((score.value - lastScore) >= scoreStep)
             {
                 lastScore = score.value;
-                if (spawnPointsHolder.ListOfSpawnPoints.Count % trackToPipeRatio == 0)
+                if (spawnPointsHolder.ListOfSpawnPoints.Count / entrancePointsHolder.ListOfEntrancePoints.Count >= trackToPipeRatio)
                 {
                     playerGenerator.AddRandomBranch();
-                    marbleTrackSpawner.AddNewTrack();
                 }
                 else
                 {
