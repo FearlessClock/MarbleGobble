@@ -13,7 +13,7 @@ public class HighscoreController : MonoBehaviour
         if(score.GetLatestValue() > localHighscore.GetLatestValue())
         {
             localHighscore.SetValue(score.value);
-            GameServices.ReportScore(score.value, GPGSIds.leaderboard_highscore);
+            GameServices.ReportScore(score.value, "Highscore");
         }
     }
 }

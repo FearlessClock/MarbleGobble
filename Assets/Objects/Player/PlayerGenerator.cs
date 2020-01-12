@@ -34,12 +34,16 @@ public class PlayerGenerator : MonoBehaviour
         {
             int angle = Random.Range(0, 360);
             int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenPipes);
-            while (usedAngles.Contains(quadrentIndex))
+            int limit = 1000;
+            while (usedAngles.Contains(quadrentIndex) && limit-- > 0)
             {
                 angle = Random.Range(0, 360);
                 quadrentIndex = Mathf.FloorToInt(angle / angleBetweenPipes);
             }
-            CreateNewBranch(quadrentIndex * angleBetweenPipes);
+            if(limit > 0)
+            {
+                CreateNewBranch(quadrentIndex * angleBetweenPipes);
+            }
 
         }
     }

@@ -8,7 +8,7 @@ namespace EasyMobile
 {
 	public static class EM_IAPConstants
 	{
-		public const string Product_NoAds = "NoAds";
+		public const string Product_noads = "noads";
 
 	}
 }

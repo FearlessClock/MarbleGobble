@@ -31,7 +31,7 @@ public class IAPStoreItemController : MonoBehaviour
         switch (itemToBuy)
         {
             case eItemToBuy.RemoveAds:
-                itemToBuyString = EM_IAPConstants.Product_NoAds;
+                itemToBuyString = EM_IAPConstants.Product_noads;
                 break;
             default:
                 break;

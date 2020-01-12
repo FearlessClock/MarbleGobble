@@ -25,26 +25,38 @@ namespace GooglePlayGames.OurUtils
 
         public static bool DebugLogEnabled
         {
-            get { return debugLogEnabled; }
+            get
+            {
+                return debugLogEnabled;
+            }
 
-            set { debugLogEnabled = value; }
+            set
+            {
+                debugLogEnabled = value;
+            }
         }
 
         private static bool warningLogEnabled = true;
 
         public static bool WarningLogEnabled
         {
-            get { return warningLogEnabled; }
+            get
+            {
+                return warningLogEnabled;
+            }
 
-            set { warningLogEnabled = value; }
+            set
+            {
+                warningLogEnabled = value;
+            }
         }
 
         public static void d(string msg)
         {
             if (debugLogEnabled)
             {
-                PlayGamesHelperObject.RunOnGameThread(() =>
-                    Debug.Log(ToLogMessage(string.Empty, "DEBUG", msg)));
+                PlayGamesHelperObject.RunOnGameThread(()=>
+                  Debug.Log(ToLogMessage(string.Empty, "DEBUG", msg)));
             }
         }
 
@@ -52,8 +64,8 @@ namespace GooglePlayGames.OurUtils
         {
             if (warningLogEnabled)
             {
-                PlayGamesHelperObject.RunOnGameThread(() =>
-                    Debug.LogWarning(ToLogMessage("!!!", "WARNING", msg)));
+                PlayGamesHelperObject.RunOnGameThread(()=>
+                  Debug.LogWarning(ToLogMessage("!!!", "WARNING", msg)));
             }
         }
 
@@ -62,7 +74,7 @@ namespace GooglePlayGames.OurUtils
             if (warningLogEnabled)
             {
                 PlayGamesHelperObject.RunOnGameThread(() =>
-                    Debug.LogWarning(ToLogMessage("***", "ERROR", msg)));
+                  Debug.LogWarning(ToLogMessage("***", "ERROR", msg)));
             }
         }
 
@@ -81,7 +93,7 @@ namespace GooglePlayGames.OurUtils
             catch (Exception)
             {
                 PlayGamesHelperObject.RunOnGameThread(() =>
-                    Debug.LogWarning("*** [Play Games Plugin DLL] ERROR: Failed to format DateTime.Now"));
+                  Debug.LogWarning("*** [Play Games Plugin DLL] ERROR: Failed to format DateTime.Now"));
                 timeString = string.Empty;
             }
 
@@ -90,3 +102,4 @@ namespace GooglePlayGames.OurUtils
         }
     }
 }
+

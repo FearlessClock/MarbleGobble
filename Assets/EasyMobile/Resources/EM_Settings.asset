@@ -209,13 +209,13 @@ MonoBehaviour:
     mAutoInit: 1
     mAutoInitDelay: 0
     mAndroidMaxLoginRequests: 0
-    mGpgsDebugLogEnabled: 0
+    mGpgsDebugLogEnabled: 1
     mGpgsPopupGravity: 0
     mGpgsShouldRequestServerAuthCode: 0
     mGpgsForceRefreshServerAuthCode: 0
     mGpgsOauthScopes: []
     mLeaderboards:
-    - _name: Highscores
+    - _name: Highscore
       _iosId: 
       _androidId: CggIicqJ9XsQAhAB
     mAchievements: []
@@ -224,6 +224,12 @@ MonoBehaviour:
       project.\r\n-->\r\n<resources>\r\n  <!-- app_id -->\r\n  <string name=\"app_id\"
       translatable=\"false\">33263084809</string>\r\n  <!-- package_name -->\r\n  <string
       name=\"package_name\" translatable=\"false\">com.Spoonfulofgames.MarbleGobble</string>\r\n
+      \ <!-- leaderboard Highscore -->\r\n  <string name=\"leaderboard_highscore\"
+      translatable=\"false\">CggIicqJ9XsQAhAB</string>\r\n</resources>\r\n<?xml version=\"1.0\"
+      encoding=\"utf-8\"?>\r\n<!--\r\nGoogle Play game services IDs.\r\nSave this
+      file as res/values/games-ids.xml in your project.\r\n-->\r\n<resources>\r\n
+      \ <!-- app_id -->\r\n  <string name=\"app_id\" translatable=\"false\">33263084809</string>\r\n
+      \ <!-- package_name -->\r\n  <string name=\"package_name\" translatable=\"false\">com.Spoonfulofgames.MarbleGobble</string>\r\n
       \ <!-- leaderboard Highscore -->\r\n  <string name=\"leaderboard_highscore\"
       translatable=\"false\">CggIicqJ9XsQAhAB</string>\r\n</resources>\r\n"
     mEnableMultiplayer: 0
@@ -239,7 +245,7 @@ MonoBehaviour:
     mValidateAppleReceipt: 0
     mValidateGooglePlayReceipt: 0
     mProducts:
-    - _name: NoAds
+    - _name: noads
       _type: 0
       _id: noads
       _price: 0.99

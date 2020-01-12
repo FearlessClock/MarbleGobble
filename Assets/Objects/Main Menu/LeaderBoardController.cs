@@ -7,9 +7,9 @@ public class LeaderBoardController : MonoBehaviour
 {
     public void ShowLeaderBoard()
     {
-        if(GameServices.LocalUser != null)
+        if (GameServices.IsInitialized())
         {
-            GameServices.ShowLeaderboardUI(GPGSIds.leaderboard_highscore);
+            GameServices.ShowLeaderboardUI("Highscore");
         }
         else
         {

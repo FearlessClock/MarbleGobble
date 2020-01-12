@@ -36,13 +36,17 @@ public class MarbleTrackSpawner : MonoBehaviour
             int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
             if (numberOfSpawnedTracks < quadrants.Length)
             {
-                while (quadrants[quadrentIndex])
+                int limit = 1000;
+                while (quadrants[quadrentIndex] && limit-- > 0)
                 {
                     angle = Random.Range(0, 360);
                     quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
                 }
-                CreateNewTrack(quadrentIndex * angleBetweenTrack);
-                quadrants[quadrentIndex] = true;
+                if(limit > 0)
+                {
+                    CreateNewTrack(quadrentIndex * angleBetweenTrack);
+                    quadrants[quadrentIndex] = true;
+                }
             }
         }
     }
@@ -77,14 +81,18 @@ public class MarbleTrackSpawner : MonoBehaviour
                     int angle = entrancePointsHolder.ListOfEntrancePoints[Random.Range(0, entrancePointsHolder.ListOfEntrancePoints.Count)].angleFromRight + point.angleFromRight;
                     angle = (int)PlayerController.SimplifyAngle(angle);
                     int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
-                    while (quadrants[quadrentIndex])
+                    int limit = 1000;
+                    while (quadrants[quadrentIndex] && limit-- > 0)
                     {
                         angle = entrancePointsHolder.ListOfEntrancePoints[Random.Range(0, entrancePointsHolder.ListOfEntrancePoints.Count)].angleFromRight + point.angleFromRight;
                         angle = (int)PlayerController.SimplifyAngle(angle);
                         quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
                     }
-                    CreateNewTrack(quadrentIndex * angleBetweenTrack);// quadrentIndex * angleBetweenTrack);
-                    quadrants[quadrentIndex] = true;
+                    if(limit > 0)
+                    {
+                        CreateNewTrack(quadrentIndex * angleBetweenTrack);// quadrentIndex * angleBetweenTrack);
+                        quadrants[quadrentIndex] = true;
+                    }
                 }
             }
             else
@@ -101,13 +109,17 @@ public class MarbleTrackSpawner : MonoBehaviour
     {
         int angle = Random.Range(0, 360);
         int quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
-        while (quadrants[quadrentIndex])
+        int limit = 1000;
+        while (quadrants[quadrentIndex] && limit-- > 0)
         {
             angle = Random.Range(0, 360);
             quadrentIndex = Mathf.FloorToInt(angle / angleBetweenTrack);
         }
-        CreateNewTrack(quadrentIndex * angleBetweenTrack);
-        quadrants[quadrentIndex] = true;
+        if(limit > 0)
+        {
+            CreateNewTrack(quadrentIndex * angleBetweenTrack);
+            quadrants[quadrentIndex] = true;
+        }
     }
 
     private void OnDestroy()

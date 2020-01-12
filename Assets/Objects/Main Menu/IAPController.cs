@@ -14,7 +14,7 @@ public class IAPController : MonoBehaviour
 
     
     // Add names here for the products that can be bought. Same as on the platforms
-    private const string kProductIDRemoveAds = EasyMobile.EM_IAPConstants.Product_NoAds;
+    private const string kProductIDRemoveAds = EasyMobile.EM_IAPConstants.Product_noads;
 
     // Add Events when Items have been bought
     public IntEvent OnCoinsBought;
